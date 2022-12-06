@@ -1,4 +1,4 @@
-name: test-image
+name: arm-squeeze
 
 on:
   push:
