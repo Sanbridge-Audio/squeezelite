@@ -7,9 +7,9 @@ RUN apt-get update && apt-get install -y \
   squeezelite 
 
 #Environmental vairables
-ENV $SQUEEZE_SERVER ""
-ENV $SQUEEZE_AUDIO ""
-#ENV $SL_NAME ""
+ENV $SQUEEZE_SERVER=""
+ENV $SQUEEZE_AUDIO=""
+#ENV $SL_NAME=""
 
 #start squeezelite
 CMD  
