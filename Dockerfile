@@ -7,4 +7,5 @@ RUN apt-get update && apt-get install -y \
   squeezelite 
 
 #start squeezelite
-CMD squeezelite
+#CMD 
+ENTRYPOINT squeezelite
