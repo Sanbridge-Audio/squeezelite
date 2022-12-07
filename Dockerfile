@@ -6,6 +6,10 @@ RUN apt-get update && apt-get install -y \
   alsa-utils \
   squeezelite 
 
+#Environmental vairables
+ENV $SQUEEZE_SERVER ""
+ENV $SQUEEZE_AUDIO ""
+
 #start squeezelite
-#CMD 
+CMD  
 ENTRYPOINT squeezelite
