@@ -12,5 +12,5 @@ ENV SQUEEZE_AUDIO=""
 #ENV $SL_NAME=""
 
 #start squeezelite
-CMD  
+CMD -o $SQUEEZE_AUDIO
 ENTRYPOINT squeezelite
