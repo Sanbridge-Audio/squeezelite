@@ -12,8 +12,9 @@ ENV SQUEEZE_AUDIO=""
 
 
 #start squeezelite
-CMD ["-o $SQUEEZE_AUDIO", "-s $SQUEEZE_SERVER"]
-ENTRYPOINT ["squeezelite"]
+CMD squeezelite -o $SQUEEZE_AUDIO -s $SQUEEZE_SERVER
+#CMD ["-o $SQUEEZE_AUDIO", "-s $SQUEEZE_SERVER"]
+#ENTRYPOINT ["squeezelite"]
 #ENTRYPOINT /usr/bin/squeezelite
 
 #front:CARD=v15,DEV=0
