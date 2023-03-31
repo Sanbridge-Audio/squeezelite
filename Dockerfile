@@ -21,7 +21,7 @@ CMD squeezelite -o $SQUEEZE_AUDIO -s $SQUEEZE_SERVER -n $SQUEEZE_NAME
 
 ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz /tmp
 RUN tar -C / -Jxpf /tmp/s6-overlay-noarch.tar.xz
-ADD https://github.com/just-containers/s6-overlay/releases/download/v3.1.4.1/s6-overlay-arm.tar.xz
+ADD https://github.com/just-containers/s6-overlay/releases/download/v3.1.4.1/s6-overlay-arm.tar.xz /tmp
 
 #https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-arm.tar.xz
 #ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-x86_64.tar.xz /tmp
