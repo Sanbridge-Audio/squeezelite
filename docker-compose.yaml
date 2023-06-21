@@ -11,6 +11,12 @@ services:
     network_mode: host
     stdin_open: true   # enable interactive flag
     tty: true
+    environment:
+      - TZ=America/New_York
+      - SNAPCLIENT_SOUNDCARD=sysdefault
+      - HOSTID=Trying
+      - SNAPCLIENT_HOST=192.168.1.198
+      - CLIENTNAME="Desktop Trial" 
 #volumes:
 #  nfs_music:
 #    driver: local
