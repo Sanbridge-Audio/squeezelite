@@ -14,9 +14,9 @@ services:
     environment:
       - TZ=America/New_York
       - SNAPCLIENT_SOUNDCARD=sysdefault
-      - HOSTID=Trying
-      - SNAPCLIENT_HOST=192.168.1.198
-      - CLIENTNAME="Desktop Trial" 
+      - SQUEEZE_SERVER="102.168.1.209"
+      - ENV SQUEEZE_AUDIO=""
+      - ENV SQUEEZE_NAME="Living Room"
 #volumes:
 #  nfs_music:
 #    driver: local
