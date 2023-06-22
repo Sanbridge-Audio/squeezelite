@@ -1,0 +1,23 @@
+version: '3'
+services:
+  lms:
+    container_name: lms
+    image: lmscommunity/logitechmediaserver
+    hostname: "Dock Two"
+    volumes:
+      - ./config:/config:rw
+      - music:/music:ro
+      - playlists:/playlist:rw
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    ports:
+      - 9001:9000/tcp
+      - 9090:9090/tcp
+      - 3483:3483/tcp
+      - 3483:3483/udp
+    restart: always
+    devices:
+      - /dev/snd:/dev/snd
+volumes:
+    music:
+    playlists:
