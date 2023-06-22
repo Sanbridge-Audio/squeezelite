@@ -2,7 +2,7 @@ version: '3'
 services:
   lms:
     container_name: lms
-    image: lmscommunity/logitechmediaserver
+    image: lmscommunity/logitechmediaserver:stable
     hostname: "Dock Two"
     volumes:
       - ./config:/config:rw
@@ -11,10 +11,13 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
     ports:
-      - 9001:9000/tcp
+      - 9001:9001/tcp
       - 9090:9090/tcp
       - 3483:3483/tcp
       - 3483:3483/udp
+    environment:
+      - TZ=America/New_York
+      - HTTP_PORT=9001
     restart: always
     devices:
       - /dev/snd:/dev/snd
