@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  squeezelite:
+    build: .
+    privileged: true
+    ports:
+    devices:
+      - /dev/snd:/dev/snd
+    restart: always
+    network_mode: host
+    environment:
+      - TZ=America/New_York
+      - SQUEEZE_SERVER="102.168.1.209"
+      - SQUEEZE_AUDIO="hw:CARD=Device,DEV=0"
+      - SQUEEZE_NAME="Living Room"
