@@ -1,15 +1,33 @@
-version: "3.9"
+#version: "3.9"
+#services:
+#  squeezelite:
+#    build: .
+#    privileged: true
+#    ports:
+#    devices:
+#      - /dev/snd:/dev/snd
+#    restart: always
+#    network_mode: host
+#    environment:
+#      - TZ=America/New_York
+#      - SQUEEZE_SERVER="102.168.1.209"
+#      - SQUEEZE_AUDIO="hw:CARD=Device,DEV=0"
+#      - SQUEEZE_NAME="Living Room"
+
+---
+version: "3"
+
 services:
-  squeezelite:
-    build: .
-    privileged: true
-    ports:
+  squeezelite-my-usb-dac:
+    image: giof71/squeezelite:latest
+    container_name: squeezelite
     devices:
       - /dev/snd:/dev/snd
-    restart: always
-    network_mode: host
     environment:
-      - TZ=America/New_York
-      - SQUEEZE_SERVER="102.168.1.209"
-      - SQUEEZE_AUDIO="hw:CARD=Device,DEV=0"
-      - SQUEEZE_NAME="Living Room"
+#      - PRESET=my-usb-dac,archimago-goldilocks,rates_up_to_384k
+      - SQUEEZELITE_NAME='Living Room'
+      - SQUEEZELITE_SERVER_PORT=192.168.1.209
+      - DISPLAY_PRESETS=Y
+      - SQUEEZELITE_AUDIO_DEVICE=hw:CARD=Device,DEV=0
+    volumes:
+      - ./config/additional.conf:/app/assets/additional-presets.conf
