@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 version: '3'
 services:
   lms:
@@ -21,3 +22,37 @@ services:
 volumes:
     music:
     playlists:
+=======
+version: "3.9"
+services:
+  squeezelite:
+    build: .
+    privileged: true
+    ports:
+    devices:
+      - /dev/snd:/dev/snd
+    restart: always
+#    user: mpd
+    network_mode: host
+    stdin_open: true   # enable interactive flag
+    tty: true
+    environment:
+      - TZ=America/New_York
+#      - SNAPCLIENT_SOUNDCARD=sysdefault
+      - SQUEEZE_SERVER="102.168.1.209"
+      - ENV SQUEEZE_AUDIO=""
+      - ENV SQUEEZE_NAME="Living Room"
+#volumes:
+#  nfs_music:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: addr=192.168.1.198,rw,noatime,rsize=8192,wsize=8192,tcp,timeo=14,nfsvers=4
+#      device: ":/music"
+#  nfs_playlist:
+#    driver: local
+#    driver_opts:
+#      type: nfs
+#      o: addr=192.168.1.198,rw,noatime,rsize=8192,wsize=8192,tcp,timeo=14,nfsvers=4
+#      device: ":/playlist"
+>>>>>>> 1c4103c41b5f20922dcd7b979295a60ae6fb6121
